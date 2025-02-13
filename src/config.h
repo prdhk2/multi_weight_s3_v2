@@ -44,12 +44,12 @@ extern byte colPins[COLS];
 extern Keypad kpd;
 
 // Deklarasi tombol ENTER
-#define ENTER_BUTTON 4  // Sesuaikan dengan pin yang digunakan
+#define ENTER_BUTTON 4
 extern int currentStateEnterButton;
 extern bool lastStateEnterButton;
 
 // Deklarasi tombol ENTER
-#define SEND_BUTTON 2  // Sesuaikan dengan pin yang digunakan
+#define SEND_BUTTON 2
 extern int currentStateSendButton;
 extern bool lastStateSendButton;
 

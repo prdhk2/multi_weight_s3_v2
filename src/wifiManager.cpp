@@ -6,10 +6,6 @@ const char *password    = "zerowaste";
 void setupWiFi() {
     WiFi.begin(ssid, password);
     wifiState = CONNECTING;
-    u8g2.clearBuffer();
-    u8g2.setFont(u8g2_font_ncenB10_tr);
-    u8g2.drawStr(2, 33, "Wifi Terhubung !");
-    u8g2.sendBuffer();
 }
 
 void handleWiFi() {

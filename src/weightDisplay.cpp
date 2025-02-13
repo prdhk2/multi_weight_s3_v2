@@ -26,20 +26,36 @@ void displayWeight() {
 
 void updateDisplay(float weight) {
     u8g2.clearBuffer();
+    
+    // Set font awal
     u8g2.setFont(u8g2_font_5x7_tr);
-    u8g2.drawStr(2, 8, "User Ditemukan !");
+
+    // Kotak putih di belakang bagian bawah (tombol)
+    u8g2.setDrawColor(1);  
+    u8g2.drawBox(0, 0, 128, 10);
+
+    // 🔹 Pastikan teks berwarna hitam di latar belakang putih
+    u8g2.setDrawColor(0);
+    u8g2.drawStr(23, 8, "User Ditemukan !");
+
+    u8g2.setDrawColor(1);
     u8g2.drawStr(2, 20, "ID");
     u8g2.drawStr(40, 20, ":");
     u8g2.drawStr(50, 20, String(id_user).c_str());
     u8g2.drawStr(2, 33, "Nama");
     u8g2.drawStr(40, 33, ":");
+
+    // Ganti font dan tetap pastikan warna teks
     u8g2.setFont(u8g2_font_ncenB10_tr);
     u8g2.drawStr(50, 35, username.c_str());
+
+    // Kembali ke font kecil
     u8g2.setFont(u8g2_font_5x7_tr);
     u8g2.drawStr(2, 46, "Berat");
     u8g2.drawStr(40, 46, ":");
-    u8g2.setFont(u8g2_font_ncenB10_tr);
 
+    // Menampilkan berat
+    u8g2.setFont(u8g2_font_ncenB10_tr);
     char weightStr[10];
     if (isnan(weight)) {
         u8g2.drawStr(50, 49, "N/A");
@@ -48,10 +64,23 @@ void updateDisplay(float weight) {
         u8g2.drawStr(50, 49, weightStr);
     }
 
+    // Satuan
     u8g2.setFont(u8g2_font_5x7_tr);
     u8g2.drawStr(105, 46, "/Kg");
-    u8g2.drawStr(1, 61, "Kembali");
-    u8g2.drawStr(103, 61, "Kirim");
+
+    // 🔹 Tombol "Kembali" (kotak putih, teks hitam)
+    u8g2.setDrawColor(1);
+    u8g2.drawBox(0, 54, 38, 10);
+
+    u8g2.setDrawColor(0);
+    u8g2.drawStr(2, 62, "Kembali");
+
+    // 🔹 Tombol "Kirim" (kotak putih, teks hitam)
+    u8g2.setDrawColor(1);
+    u8g2.drawBox(100, 54, 40, 10);
+
+    u8g2.setDrawColor(0);
+    u8g2.drawStr(102, 62, "Kirim");
 
     u8g2.sendBuffer();
     yield();
@@ -67,7 +96,7 @@ bool checkKeyPress() {
 
     if (key == '*') {  // Jika tombol '*' ditekan, kembali ke menu
         Serial.println("Tombol '*' ditekan, kembali ke menu...");
-        menuDisplay();
+        readUserID();
         return true;
     }
 

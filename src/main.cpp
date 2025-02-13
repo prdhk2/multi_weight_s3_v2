@@ -40,6 +40,7 @@ void setup() {
     Serial2.begin(4800, SERIAL_8N1, 18, -1, true); // master 1 Serial for Debugging
     setupWiFi();
     u8g2.begin();
+    u8g2.setDrawColor(1);
     loadingDisplay();
     pinMode(SEND_BUTTON, INPUT_PULLUP);  // Gunakan internal pull-up
     pinMode(ENTER_BUTTON, INPUT_PULLUP);

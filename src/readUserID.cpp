@@ -7,6 +7,7 @@ void readUserID() {
 
     // Tampilkan layar awal hanya sekali
     u8g2.clearBuffer();
+    u8g2.setDrawColor(1);
     u8g2.setFont(u8g2_font_ncenB10_tr);
     u8g2.drawStr(2, 28, "MASUKAN");
     u8g2.drawStr(2, 45, "ID USER :");
@@ -36,6 +37,7 @@ void readUserID() {
             if (id_input != lastInput) {
                 lastInput = id_input;
                 u8g2.clearBuffer();
+                u8g2.setDrawColor(1);
                 u8g2.drawStr(2, 28, "MASUKAN");
                 u8g2.drawStr(2, 45, "ID USER :");
                 u8g2.drawStr(80, 45, id_input.c_str());
