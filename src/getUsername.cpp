@@ -1,6 +1,6 @@
 #include "config.h"
 
-const char* serverUrl = "http://192.168.1.9/timbangan/api.php";  // Ganti dengan URL API-mu
+const char* serverUrl = "https ://rizqisemesta.com/taman-jatisari/api.php";  // Ganti dengan URL API-mu
 
 String getusername(int userId) {
  if (WiFi.status() == WL_CONNECTED) {

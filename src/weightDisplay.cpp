@@ -77,10 +77,10 @@ void updateDisplay(float weight) {
 
     // 🔹 Tombol "Kirim" (kotak putih, teks hitam)
     u8g2.setDrawColor(1);
-    u8g2.drawBox(100, 54, 40, 10);
+    u8g2.drawBox(88, 54, 40, 10);
 
     u8g2.setDrawColor(0);
-    u8g2.drawStr(102, 62, "Kirim");
+    u8g2.drawStr(90, 62, "Kirim");
 
     u8g2.sendBuffer();
     yield();
