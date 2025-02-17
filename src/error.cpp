@@ -2,6 +2,7 @@
 
 void notFoundError() {
     u8g2.clearBuffer();
+    u8g2.setDrawColor(1);
     u8g2.setFont(u8g2_font_ncenB10_tr); // Pastikan menggunakan font yang sesuai
     u8g2.drawStr(10, 30, "USER TIDAK");
     u8g2.drawStr(8, 50, "DITEMUKAN!");

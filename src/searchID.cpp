@@ -18,6 +18,6 @@ void searchID(int new_id) {
     } else {
         Serial.println("User tidak ditemukan!");
         notFoundError();
-        menuDisplay();
+        readUserID();
     }
 }
