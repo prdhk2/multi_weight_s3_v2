@@ -80,7 +80,7 @@ void updateDisplay(float weight) {
     u8g2.drawBox(88, 54, 40, 10);
 
     u8g2.setDrawColor(0);
-    u8g2.drawStr(90, 62, "Kirim");
+    u8g2.drawStr(96, 62, "Kirim");
 
     u8g2.sendBuffer();
     yield();
